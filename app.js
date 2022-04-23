@@ -22,6 +22,10 @@ Employee.prototype.uniqueId = function(){
     }
 
 Employee.prototype.render = function(){
+    let imageCard = document.createElement("img");
+    imageCard.src = this.imageUrl;
+    sectionEl.appendChild(imageCard);
+    
     let nameCard = document.createElement('p');
     nameCard.textContent = this.fullName;
     sectionEl.appendChild(nameCard);
@@ -41,6 +45,7 @@ Employee.prototype.render = function(){
     let salaryCard = document.createElement("p");
     salaryCard.textContent = this.salary;
     sectionEl.appendChild(salaryCard);
+
 // document.write(`employee name: ${this.fullName}, ID: ${this.employeeId}, salary: ${this.salary}<br>`);
 }
     
