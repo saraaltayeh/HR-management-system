@@ -17,7 +17,17 @@ formEl.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
 event.preventDefault();
-console.log("form event", event)
+console.log("form event", event);
+let id =  null;
+let fullname = event.target.fullname.value;
+let department = event.target.department.value;
+let level = event.target.level.value;
+let image = event.target.image.value;
+let salary =  null;
+let newEmployee =new Employee(id, fullname, department, level, image)
+
+console.log(newEmployee);
+newEmployee.render();
 }
 
 Employee.prototype.uniqueId = function(){
