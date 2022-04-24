@@ -7,23 +7,27 @@
     <title>HR-management-system</title>
 </head>
 <style>
+    body {
+        background-color: #FFF9F9;
+    }
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
+    background-color: #D9D7F1;
 }
 .logo {
 font-weight: bolder;
 font-size: larger;
+color: white;
 }
 footer {
     position: absolute;
-    bottom: 0;
+    
     font-size: large;
     font-weight: bolder;
     color: white;
-    background-color: black;
+    background-color: #D9D7F1;
     width: 100%;
 }
 nav a {
@@ -38,21 +42,59 @@ footer a {
     color: white;
     text-decoration: none;
 }
+form {
+    border: 3px solid #FFCBCB;
+}
+section {
+    display: flex;
+}
+#cardSection {
+    width: 200px;
+    height: 200px;
+}
 </style>
 <body>
     <header>
         <p class="logo">
-        <img src="./assets/hr-logo.png" alt="logo" width="150px" height="120px"><br>
+        <img src="./assets/download.jpg" alt="logo" width="150px" height="120px"><br>
         HR management system
         </p>
     <nav class="navbar">
         <a href="./index.html">Home</a>
-        <a href="./accounting.html">Accountin</a>
-        <a href="/">Contact</a>
+        <a href="./accounting.html">Accounting</a>
+        <a href="./">Contact</a>
     </nav>
     <i class="fa-solid fa-magnifying-glass"></i>
     </header>
+
+    <main>
+        <section id="cardSection">
+
+        </section>
+    <form id="formId">
+    <label for="fullname">Full Name:</label><br>
+    <input type="text" id="fullname" name="fullname">
+<br>
+<label for="department">Choose a department:</label><br>
+    <select name="department" id="department">
+        <option value="administration">Administration</option>
+        <option value="marketing">Marketing</option>
+        <option value="development">Development</option>
+        <option value="finance">Finance</option>
+      </select>
+      <br>
+      <label for="level">Choose a level:</label><br>
+      <select name="level" id="level">
+        <option value="junior">Junior</option>
+        <option value="mid-senior">Mid-Senior</option>
+        <option value="senior">Senior</option>
+      </select>
+      <br><br>
+      <input type="submit" value="Submit">
+      <br>
+    </form>
     <script src="./app.js"></script>
+</main>
     <footer>
         <p id='facebook-icon'>Follow Us</p>
         <a href="https://www.linkedin.com/" >LinkdIn</a><br>
