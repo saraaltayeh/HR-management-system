@@ -25,31 +25,38 @@ Employee.prototype.uniqueId = function(){
     }
 
 Employee.prototype.render = function(){ 
+    let divCard = document.createElement('div');
+    sectionEl.appendChild(divCard);
+
     let imageCard = document.createElement("img");
     imageCard.src = this.imageUrl;
-    sectionEl.appendChild(imageCard);
+    divCard.appendChild(imageCard);
+
+    let br = document.createElement('br');
+    divCard.appendChild(br);
 
     let nameCard = document.createElement('p');
     nameCard.textContent = this.fullName;
-    sectionEl.appendChild(nameCard);
+    divCard.appendChild(nameCard);
 
     let idCard = document.createElement("p");
     idCard.textContent = this.employeeId;
-    sectionEl.appendChild(idCard);
+    divCard.appendChild(idCard);
 
     let departmentCard = document.createElement("p");
     departmentCard.textContent = this.department;
-    sectionEl.appendChild(departmentCard);
+    divCard.appendChild(departmentCard);
 
     let levelCard = document.createElement("p");
     levelCard.textContent = this.level;
-    sectionEl.appendChild(levelCard);
+    divCard.appendChild(levelCard);
 
     let salaryCard = document.createElement("p");
     salaryCard.textContent = this.salary;
-    sectionEl.appendChild(salaryCard);
+    divCard.appendChild(salaryCard);
 
 }
+
    
 Employee.prototype.salary = function() {
     if(this.level === "Senior"){
