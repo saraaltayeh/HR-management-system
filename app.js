@@ -21,7 +21,7 @@ Employee.prototype.uniqueId = function(){
     return Math.floor(1000 + Math.random() * 9000);
     }
 
-Employee.prototype.render = function(){
+Employee.prototype.render = function(){ 
     let imageCard = document.createElement("img");
     imageCard.src = this.imageUrl;
     sectionEl.appendChild(imageCard);
