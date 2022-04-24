@@ -1,6 +1,8 @@
+
 let allEmployee = [];
 let formEl = document.getElementById('formId');
 let sectionEl = document.getElementById("cardSection");
+
 function Employee(id, name, department, level, image){
 this.employeeId = id;
 this.fullName = name;
@@ -11,6 +13,7 @@ allEmployee.push(this);
 };
 
 formEl.addEventListener("submit", handleSubmit);
+
 
 function handleSubmit(event) {
 event.preventDefault();
@@ -47,7 +50,7 @@ Employee.prototype.render = function(){
     sectionEl.appendChild(salaryCard);
 
 }
-    
+   
 Employee.prototype.salary = function() {
     if(this.level === "Senior"){
     this.salary = randomSalary(2000,1500);
@@ -56,6 +59,7 @@ Employee.prototype.salary = function() {
     else if(this.level === "Mid-Senior"){
     this.salary = randomSalary(1500,1000);
     this.salary = this.salary * (1 - 0.075);
+
     }
     else {
     this.salary = randomSalary(1000,500);
