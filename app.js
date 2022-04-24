@@ -56,7 +56,6 @@ Employee.prototype.render = function(){
 
 }
 
-   
 Employee.prototype.salary = function() {
     if(this.level === "Senior"){
     this.salary = randomSalary(2000,1500);
