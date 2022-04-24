@@ -49,3 +49,5 @@ function renderAll() {
         allEmployee[i].render();
     }
 }
+
+// localStorage.setItem(Employee, renderAll())
