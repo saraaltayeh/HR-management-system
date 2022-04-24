@@ -96,3 +96,5 @@ function renderAll() {
         allEmployee[i].uniqueId();
     }
 }
+
+// localStorage.setItem(Employee, renderAll())
