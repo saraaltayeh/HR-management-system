@@ -32,28 +32,17 @@ Employee.prototype.render = function(){
     imageCard.src = this.imageUrl;
     divCard.appendChild(imageCard);
 
-    let br = document.createElement('br');
-    divCard.appendChild(br);
+    let p1 = document.createElement('p');
+    p1.textContent = `Name: ${this.fullName} - ID: ${this.employeeId}`;
+    divCard.appendChild(p1);
 
-    let nameCard = document.createElement('p');
-    nameCard.textContent = this.fullName;
-    divCard.appendChild(nameCard);
+    let p2 = document.createElement("p");
+    p2.textContent = `Department: ${this.department} - Level: ${this.level}`;
+    divCard.appendChild(p2);
 
-    let idCard = document.createElement("p");
-    idCard.textContent = this.employeeId;
-    divCard.appendChild(idCard);
-
-    let departmentCard = document.createElement("p");
-    departmentCard.textContent = this.department;
-    divCard.appendChild(departmentCard);
-
-    let levelCard = document.createElement("p");
-    levelCard.textContent = this.level;
-    divCard.appendChild(levelCard);
-
-    let salaryCard = document.createElement("p");
-    salaryCard.textContent = this.salary;
-    divCard.appendChild(salaryCard);
+    let p3 = document.createElement("p");
+    p3.textContent = `${this.salary}`;
+    divCard.appendChild(p3);
 
 }
 
@@ -95,5 +84,6 @@ function renderAll() {
     for (let i=0; i<allEmployee.length; i++){
         allEmployee[i].salary();
         allEmployee[i].render();
+        allEmployee[i].uniqueId();
     }
 }
