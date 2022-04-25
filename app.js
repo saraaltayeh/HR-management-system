@@ -35,12 +35,15 @@ let fullname = event.target.fullname.value;
 let department = event.target.department.value;
 let level = event.target.level.value;
 let image = event.target.image.value;
+
 newSalary[i];
 // let newSalary = Math.floor(1000 + Math.random() * 9000);
 let newEmployee = new Employee(newId, fullname, department, level, image, newSalary)
 
 console.log(newEmployee);
+
 newEmployee.render();
+saveData(newEmployee);
 }
 
 Employee.prototype.uniqueId = function(){
@@ -109,3 +112,19 @@ function renderAll() {
         allEmployee[i].uniqueId();
     }
 }
+
+function saveData(data){
+    let sringifyData = JSON.stringify(data)
+localStorage.setItem("employee", sringifyData);
+
+let parseData = localStorage.getItem("employee")
+console.log(parseData);
+}
+
+function getData(){
+let retrieveData = localStorage.getItem("employee");
+let arrData = JSON.parse(retrieveData);
+console.log(arrData);
+}
+
+getData();
