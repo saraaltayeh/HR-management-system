@@ -23,11 +23,11 @@ let fullname = event.target.fullname.value;
 let department = event.target.department.value;
 let level = event.target.level.value;
 let image = event.target.image.value;
-let salary =  null;
-let newEmployee =new Employee(id, fullname, department, level, image)
-
-console.log(newEmployee);
+let salary = null;
+let newEmployee =new Employee(id, fullname, department, level, image);
+// console.log(newEmployee);
 newEmployee.render();
+saveData(newEmployee);
 }
 
 Employee.prototype.uniqueId = function(){
@@ -97,4 +97,18 @@ function renderAll() {
     }
 }
 
-// localStorage.setItem(Employee, renderAll())
+function saveData(data){
+    let sringifyData = JSON.stringify(data)
+localStorage.setItem("employee", sringifyData);
+
+let parseData = localStorage.getItem("employee")
+console.log(parseData);
+}
+
+function getData(){
+let retrieveData = localStorage.getItem("employee");
+let arrData = JSON.parse(retrieveData);
+console.log(arrData);
+}
+
+getData();
