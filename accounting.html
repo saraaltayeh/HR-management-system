@@ -1,64 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HR-management-system</title>
-</head>
-<style>
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #D9D7F1;
+  </head>
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #d9d7f1;
+    }
+    .logo {
+      font-weight: bolder;
+      font-size: larger;
+      color: white;
+    }
+    footer {
+      position: absolute;
+      font-size: large;
+      font-weight: bolder;
+      color: white;
+      background-color: #d9d7f1;
+      width: 100%;
+    }
+    main {
+    margin: 50px 20px;
 }
-.logo {
-font-weight: bolder;
-font-size: larger;
-color: white;
+    nav a {
+      text-decoration: none;
+      padding: 30px 40px;
+      margin: 0 40px;
+      font-size: 25px;
+      font-weight: bold;
+      color: white;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+    table, td, tr {  
+  border: 1px solid #ddd;
+  text-align: left;
 }
-footer {
-    position: absolute;
-    bottom: 0;
-    font-size: large;
-    font-weight: bolder;
-    color: white;
-    background-color: #D9D7F1;
-    width: 100%;
+    table {
+  border-collapse: collapse;
+  width: 100%;
 }
-nav a {
-    text-decoration: none;
-    padding: 30px 40px;
-    margin: 0 40px;
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
+    th, td {
+  padding: 15px;
+  text-align: left;
 }
-footer a {
-    color: white;
-    text-decoration: none;
-}
-</style>
-<body>
+  </style>
+  <body>
     <header>
-        <p class="logo">
-        <img src="./assets/download.jpg" alt="logo" width="150px" height="120px"><br>
+      <p class="logo">
+        <img
+          src="./assets/download.jpg"
+          alt="logo"
+          width="150px"
+          height="120px"
+        /><br />
         HR management system
-        </p>
-    <nav class="navbar">
+      </p>
+      <nav class="navbar">
         <a href="./index.html">Home</a>
         <a href="./accounting.html">Accounting</a>
         <a href="/">Contact</a>
-    </nav>
-    <i class="fa-solid fa-magnifying-glass"></i>
+      </nav>
+      <i class="fa-solid fa-magnifying-glass"></i>
     </header>
+    <main>
+        <table id="tableId">
+<tr>
+    <td>Department</td>
+    <td>Number of employees</td>
+    <td>Total Salary</td>
+    <td>Average</td>
+</tr>
+<tfoot>
+    <tr>
+      <td>department name</td>
+      <td>Total</td>
+      <td>Total salary</td>
+      <td>Average</td>
+    </tr>
+  </tfoot>
+        </table>
+      <script src="./accounting.js"></script>
+    </main>
     <footer>
-        <p id='facebook-icon'>Follow Us</p>
-        <a href="https://www.linkedin.com/" >LinkdIn</a><br>
-        <a href="https://www.facebook.com/">Facebook</a><br>
-        <a href="https://www.instagram.com/?hl=en">Instagram</a><br>
-        <p>&copy; 2022 HR management system.com</p>
+      <p id="facebook-icon">Follow Us</p>
+      <a href="https://www.linkedin.com/">LinkdIn</a><br />
+      <a href="https://www.facebook.com/">Facebook</a><br />
+      <a href="https://www.instagram.com/?hl=en">Instagram</a><br />
+      <p>&copy; 2022 HR management system.com</p>
     </footer>
-</body>
+  </body>
 </html>
