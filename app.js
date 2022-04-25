@@ -16,15 +16,28 @@ formEl.addEventListener("submit", handleSubmit);
 
 
 function handleSubmit(event) {
+    let newSalary = 0;
+    for (i=0; i<newSalary.length;i++){
+    if(level === "Senior"){
+        newSalary[i] = getRandomInt(1500,2000);
+      }
+      if(level=== "Mid-Senior"){
+        newSalary[i] = getRandomInt(1000,1500);
+        }
+      if(level=== "Junior"){
+        newSalary[i] = getRandomInt(500,1000);
+        }
+    }
 event.preventDefault();
 console.log("form event", event);
-let id =  null;
+let newId = Math.floor(1000 + Math.random() * 9000);
 let fullname = event.target.fullname.value;
 let department = event.target.department.value;
 let level = event.target.level.value;
 let image = event.target.image.value;
-let salary =  null;
-let newEmployee =new Employee(id, fullname, department, level, image)
+newSalary[i];
+// let newSalary = Math.floor(1000 + Math.random() * 9000);
+let newEmployee = new Employee(newId, fullname, department, level, image, newSalary)
 
 console.log(newEmployee);
 newEmployee.render();
