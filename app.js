@@ -16,19 +16,9 @@ formEl.addEventListener("submit", handleSubmit);
 
 
 function handleSubmit(event) {
-    let newSalary = 0;
-    for (i=0; i<newSalary.length;i++){
-    if(level === "Senior"){
-        newSalary[i] = getRandomInt(1500,2000);
-      }
-      if(level=== "Mid-Senior"){
-        newSalary[i] = getRandomInt(1000,1500);
-        }
-      if(level=== "Junior"){
-        newSalary[i] = getRandomInt(500,1000);
-        }
-    }
-event.preventDefault();
+    event.preventDefault();
+    
+
 console.log("form event", event);
 let newId = Math.floor(1000 + Math.random() * 9000);
 let fullname = event.target.fullname.value;
@@ -36,12 +26,11 @@ let department = event.target.department.value;
 let level = event.target.level.value;
 let image = event.target.image.value;
 
-newSalary[i];
-// let newSalary = Math.floor(1000 + Math.random() * 9000);
-let newEmployee = new Employee(newId, fullname, department, level, image, newSalary)
+
+let newEmployee = new Employee(newId, fullname, department, level, image)
 
 console.log(newEmployee);
-
+newEmployee.monthSalary();
 newEmployee.render();
 saveData(newEmployee);
 }
@@ -72,7 +61,7 @@ Employee.prototype.render = function(){
 
 }
 
-Employee.prototype.salary = function() {
+Employee.prototype.monthSalary = function() {
     if(this.level === "Senior"){
     this.salary = randomSalary(2000,1500);
     this.salary = this.salary * (1 - 0.075);
@@ -107,7 +96,7 @@ function randomSalary(min ,max) {
 
 function renderAll() {
     for (let i=0; i<allEmployee.length; i++){
-        allEmployee[i].salary();
+        allEmployee[i].monthSalary();
         allEmployee[i].render();
         allEmployee[i].uniqueId();
     }
