@@ -78,3 +78,47 @@ function renderAll() {
     }
 }
 renderAll();
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    console.log("form event", event);
+    let newId = Math.floor(1000 + Math.random() * 9000);
+    let name = event.target.name.value;
+    let department = event.target.department.value;
+    let level = event.target.level.value;
+    let image = event.target.image.value;
+    let newEmployee = new Employee(newId, name, department, level, image)
+
+    console.log(newEmployee);
+    newEmployee.monthSalary();
+    newEmployee.render();
+    saveData(newEmployee);
+}
+
+function saveData(data) {
+    let localData = JSON.parse(localStorage.getItem('employees'));
+    if (localData != null) {
+        localData.push(data);
+        localStorage.setItem('employees', JSON.stringify(localData));
+    } else {
+        localStorage.setItem('employees', JSON.stringify([data]));
+    }
+}
+// console.log("before saving to ls", newEmployee);
+
+function getData() {
+    let retrieveData = localStorage.getItem("employees");
+    let arrData = JSON.parse(retrieveData);
+    // console.log(arrData);
+
+    if (arrData != null) {
+        for (let i = 0; i < arrData.length; i++) {
+            new Employee(arrData[i].id, arrData[i].name, arrData[i].department, arrData[i].level, arrData[i].image);
+        }
+    }
+
+    renderAll();
+}
+
+getData();
