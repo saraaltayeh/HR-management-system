@@ -59,13 +59,13 @@ Employee.prototype.salary = function() {
         return avg;
         }
 
-let ghazi = new Employee("Administration", 1, 400, 300);
-let lana = new Employee("Marketing", 2, 400,350);
-let tamara = new Employee("Administration", 3, 300,450 );
-let safi = new Employee("Mid-Senior", 4, 300,350 );
-let omar = new Employee( "Development", 5, 300, 500);
-let rana = new Employee("Development", 6, 200,550);
-let hadi = new Employee("Finance", 7, 500,600);
+// let ghazi = new Employee("Administration", 1, 400, 300);
+// let lana = new Employee("Marketing", 2, 400,350);
+// let tamara = new Employee("Administration", 3, 300,450 );
+// let safi = new Employee("Mid-Senior", 4, 300,350 );
+// let omar = new Employee( "Development", 5, 300, 500);
+// let rana = new Employee("Development", 6, 200,550);
+// let hadi = new Employee("Finance", 7, 500,600);
 
 
 function randomSalary(min ,max) {
@@ -77,15 +77,15 @@ function renderAll() {
         allEmployee[i].renderTable();
     }
 }
-renderAll();
+
 
 function handleSubmit(event) {
     event.preventDefault();
 
     console.log("form event", event);
+    let department = event.target.department.value;
     let newId = Math.floor(1000 + Math.random() * 9000);
     let name = event.target.name.value;
-    let department = event.target.department.value;
     let level = event.target.level.value;
     let image = event.target.image.value;
     let newEmployee = new Employee(newId, name, department, level, image)

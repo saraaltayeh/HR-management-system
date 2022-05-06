@@ -101,7 +101,7 @@ function saveData(data) {
         localData.push(data);
         localStorage.setItem('employees', JSON.stringify(localData));
     } else {
-        localStorage.setItem('employees', JSON.stringify([data]));
+        localStorage.setItem('employees', JSON.stringify([data]))
     }
 }
 // console.log("before saving to ls", newEmployee);
